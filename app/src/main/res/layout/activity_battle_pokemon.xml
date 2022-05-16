@@ -10,116 +10,146 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Batalha"
         android:textColor="#000000"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="150dp"
-        app:srcCompat="@drawable/in_image_bulbasaur"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="245dp" />
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginEnd="84dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/in_image_bulbasaur" />
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="170dp"
+        android:layout_width="0dp"
         android:layout_height="170dp"
-        app:srcCompat="@drawable/image_mewtwo"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="144dp" />
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="81dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:srcCompat="@drawable/image_mewtwo" />
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
-        app:srcCompat="@drawable/heal_button"
-        tools:layout_editor_absoluteX="202dp"
-        tools:layout_editor_absoluteY="494dp" />
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        app:srcCompat="@drawable/heal_button" />
 
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        app:srcCompat="@drawable/run_button"
-        tools:layout_editor_absoluteX="202dp"
-        tools:layout_editor_absoluteY="564dp" />
+        android:layout_marginEnd="59dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:srcCompat="@drawable/run_button" />
 
     <ImageView
         android:id="@+id/imageView14"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        app:srcCompat="@drawable/desenfe_button"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="564dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toStartOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:srcCompat="@drawable/desenfe_button" />
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        app:srcCompat="@drawable/attack_button"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="494dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView13"
+        app:srcCompat="@drawable/attack_button" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="15dp"
         android:text="--------------------     PAINEL     ------------------"
         android:textColor="#000000"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="460dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="@+id/imageView13" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="23dp"
         android:text="Turno"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="italic"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="89dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:text="HP:"
         android:textColor="#000000"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="402dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView18"
+        app:layout_constraintStart_toStartOf="@+id/imageView10" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="10dp"
         android:text="HP:"
         android:textColor="#000000"
-        tools:layout_editor_absoluteX="262dp"
-        tools:layout_editor_absoluteY="325dp" />
+        app:layout_constraintEnd_toStartOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="2500"
         android:textColor="#000000"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="82dp"
-        tools:layout_editor_absoluteY="403dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="85dp"
         android:text="2500"
         android:textColor="#000000"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="294dp"
-        tools:layout_editor_absoluteY="325dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView17" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

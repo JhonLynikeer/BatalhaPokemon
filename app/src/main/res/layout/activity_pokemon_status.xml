@@ -7,131 +7,109 @@
     tools:context=".PokemonStatus">
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/image_pokemo_status"
         android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/image_bulbasaur" />
+        android:layout_height="149dp"
+        app:srcCompat="@drawable/image_caterpie"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="147dp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/name_pokemon_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
-        android:text="Bulbasaur"
+        android:text="Caterpie"
         android:textColor="#000000"
         android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="66dp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/hp_pokemon_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="121dp"
-        android:layout_marginEnd="119dp"
-        android:layout_marginBottom="7dp"
         android:text="500"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView7" />
+        tools:layout_editor_absoluteX="252dp"
+        tools:layout_editor_absoluteY="418dp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
         android:text="Defesa:"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintStart_toStartOf="@+id/textView5" />
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="373dp" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="16dp"
         android:text="Ataque:"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toStartOf="@+id/textView10" />
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="325dp" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
         android:text="HP:"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView6" />
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="418dp" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/ataque_pokemon_satus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
         android:text="8 - 13"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toStartOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="@+id/textView11" />
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="326dp" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/defesa_pokemon_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="13dp"
         android:text="34"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
-        app:layout_constraintEnd_toEndOf="@+id/textView12" />
+        tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="373dp" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/texto_lutar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="153dp"
         android:text="Lutar com esse Pokemon?"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteY="458dp" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/button_yes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:srcCompat="@drawable/yes_button" />
+        app:srcCompat="@drawable/yes_button"
+        tools:layout_editor_absoluteY="591dp" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/button_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:srcCompat="@drawable/no_button" />
+        app:srcCompat="@drawable/no_button"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="591dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
