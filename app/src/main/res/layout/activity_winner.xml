@@ -10,34 +10,46 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="44dp"
         android:text="Parabens!!! \n Voce \nGanhou"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="48sp"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="35dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/image_bulbasaur"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="256dp" />
+        android:layout_height="0dp"
+        android:layout_marginBottom="39dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_newbattle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:srcCompat="@drawable/image_bulbasaur" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/button_newbattle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/button_newbattle"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="445dp" />
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:srcCompat="@drawable/button_newbattle" />
 
     <ImageView
-        android:id="@+id/imageView18"
+        android:id="@+id/button_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/button_home"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="508dp" />
+        android:layout_marginBottom="173dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button_newbattle"
+        app:layout_constraintTop_toBottomOf="@+id/button_newbattle"
+        app:srcCompat="@drawable/button_home" />
 </androidx.constraintlayout.widget.ConstraintLayout>

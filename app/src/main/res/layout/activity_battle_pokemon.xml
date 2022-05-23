@@ -19,92 +19,97 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/image_player"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="0dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="245dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="84dp"
+        android:layout_marginBottom="27dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView16"
         app:layout_constraintEnd_toStartOf="@+id/textView17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nome_pokemon"
         app:srcCompat="@drawable/in_image_bulbasaur" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/image_boss"
         android:layout_width="0dp"
         android:layout_height="170dp"
         android:layout_marginTop="83dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="81dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintBottom_toBottomOf="@+id/image_player"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toEndOf="@+id/image_player"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         app:srcCompat="@drawable/image_mewtwo" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/button_heal"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginTop="72dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView15"
-        app:layout_constraintStart_toStartOf="@+id/imageView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        android:layout_marginBottom="71dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_def"
+        app:layout_constraintEnd_toEndOf="@+id/button_run"
+        app:layout_constraintStart_toEndOf="@+id/button_def"
+        app:layout_constraintTop_toBottomOf="@+id/hp_player"
         app:srcCompat="@drawable/heal_button" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/button_run"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginEnd="59dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
         app:srcCompat="@drawable/run_button" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/button_def"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-        app:layout_constraintEnd_toStartOf="@+id/imageView13"
+        app:layout_constraintBottom_toBottomOf="@+id/button_run"
+        app:layout_constraintEnd_toStartOf="@+id/button_run"
         app:layout_constraintStart_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/button_run"
         app:srcCompat="@drawable/desenfe_button" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/button_atk"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView14"
-        app:layout_constraintEnd_toEndOf="@+id/imageView14"
-        app:layout_constraintStart_toStartOf="@+id/imageView14"
-        app:layout_constraintTop_toTopOf="@+id/imageView13"
+        app:layout_constraintBottom_toBottomOf="@+id/button_heal"
+        app:layout_constraintEnd_toStartOf="@+id/button_heal"
+        app:layout_constraintStart_toStartOf="@+id/button_def"
+        app:layout_constraintTop_toTopOf="@+id/button_heal"
         app:srcCompat="@drawable/attack_button" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="15dp"
-        android:text="--------------------     PAINEL     ------------------"
+        android:layout_marginBottom="20dp"
+        android:text="-----------------------------------------------------------"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/imageView13" />
+        app:layout_constraintBottom_toTopOf="@+id/button_atk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/text_turno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="1dp"
         android:layout_marginBottom="23dp"
         android:text="Turno"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
-        app:layout_constraintEnd_toEndOf="@+id/textView9" />
+        app:layout_constraintBottom_toTopOf="@+id/image_boss"
+        app:layout_constraintStart_toStartOf="@+id/image_boss" />
 
     <TextView
         android:id="@+id/textView16"
@@ -113,8 +118,8 @@
         android:layout_marginStart="24dp"
         android:text="HP:"
         android:textColor="#000000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView18"
-        app:layout_constraintStart_toStartOf="@+id/imageView10" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/hp_player"
+        app:layout_constraintStart_toStartOf="@+id/image_player" />
 
     <TextView
         android:id="@+id/textView17"
@@ -124,32 +129,74 @@
         android:layout_marginEnd="10dp"
         android:text="HP:"
         android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/textView19"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        app:layout_constraintEnd_toStartOf="@+id/hp_boss"
+        app:layout_constraintStart_toEndOf="@+id/image_player"
+        app:layout_constraintTop_toBottomOf="@+id/image_boss" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/hp_player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="309dp"
         android:text="2500"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView16" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/hp_boss"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="85dp"
-        android:text="2500"
+        android:text="1000"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="23dp"
+        android:text="Mewtwo"
+        app:layout_constraintBottom_toTopOf="@+id/image_boss"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/nome_pokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="226dp"
+        android:text="NomePokemon"
+        app:layout_constraintStart_toStartOf="@+id/image_player"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/efeito_atk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/image_boss"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/image_boss"
+        app:layout_constraintVertical_bias="0.333"
+        app:srcCompat="@drawable/semefeito" />
+
+    <ImageView
+        android:id="@+id/pokemonEfeito"
+        android:layout_width="191dp"
+        android:layout_height="191dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_player"
+        app:layout_constraintEnd_toEndOf="@+id/image_player"
+        app:layout_constraintStart_toStartOf="@+id/image_player"
+        app:layout_constraintTop_toTopOf="@+id/image_player"
+        app:srcCompat="@drawable/semefeito" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

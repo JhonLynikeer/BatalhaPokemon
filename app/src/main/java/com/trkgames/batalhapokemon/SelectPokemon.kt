@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.graphics.toColor
 import androidx.core.graphics.toColorInt
 import com.trkgames.batalhapokemon.databinding.ActivityNameTreinerBinding
@@ -22,11 +24,18 @@ class SelectPokemon : AppCompatActivity() {
         R.drawable.image_charmeleon,
         R.drawable.image_pidgeotto,
     )
+    val nome = arrayListOf<String>(
+        "Caterpie",
+        "Bulbasaur",
+        "Charmeleon",
+        "Pidgeotto",
+    )
+
     val dano = arrayListOf<String>(
-        "10 - 20",
-        "20 - 30",
-        "30 - 50",
-        "30 - 40",
+        "20",
+        "30",
+        "50",
+        "40",
         )
 
     val defesa = arrayListOf<String>(
@@ -69,9 +78,33 @@ class SelectPokemon : AppCompatActivity() {
         }
 
         binding.buttonYes.setOnClickListener {
-            val intent = Intent(this, BattlePokemon::class.java)
-            startActivity(intent)
-            finish()
+            //val intent = Intent(this, BattlePokemon::class.java)
+            //intent.putExtra("pokemon", "${x}")
+
+
+            val dialog = AlertDialog.Builder(this).
+            setTitle("Tem certeza?").
+            setMessage("O chefao pode acabar com você muito rapido!")
+                .setPositiveButton("Sim") { dialog, _ ->
+                    val intent = Intent(this, BattlePokemon::class.java)
+                    intent.putExtra("image", "${x}")
+                    intent.putExtra("nome", "${nome[x]}")
+                    intent.putExtra("hp", "${hp[x]}")
+                    intent.putExtra("dano", "${dano[x]}")
+
+                    startActivity(intent)
+                    finish()
+
+                    dialog.dismiss()
+                }
+                .setNegativeButton("Não") { dialog, _ ->
+                    dialog.dismiss()
+                }
+            dialog.show()
+
+
+            //startActivity(intent)
+            //finish()
         }
 
 
@@ -95,6 +128,7 @@ class SelectPokemon : AppCompatActivity() {
             binding.ataquePokemonStatus.setText(dano[x])
             binding.defesaPokemonStatus.setText(defesa[x])
             binding.hpPokemonStatus.setText(hp[x])
+            binding.namePokemonStatus.setText(nome[x])
         }
     }
 
@@ -105,11 +139,14 @@ class SelectPokemon : AppCompatActivity() {
             binding.ataquePokemonStatus.setText(dano[x])
             binding.defesaPokemonStatus.setText(defesa[x])
             binding.hpPokemonStatus.setText(hp[x])
+            binding.namePokemonStatus.setText(nome[x])
         }
     }
 
 
     override fun onBackPressed() {
-
+        val erroErik = Toast.makeText(this,
+            "Sistema anti-erik ATIVADO, so da pra voltar pela navegaçao de botoes", Toast.LENGTH_SHORT)
+        erroErik.show()
     }
 }
