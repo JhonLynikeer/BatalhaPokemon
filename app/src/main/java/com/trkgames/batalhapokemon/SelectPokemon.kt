@@ -46,7 +46,7 @@ class SelectPokemon : AppCompatActivity() {
     )
 
     val hp = arrayListOf<String>(
-        "250",
+        "500",
         "320",
         "300",
         "350",
@@ -62,6 +62,7 @@ class SelectPokemon : AppCompatActivity() {
 
         val dados: Bundle? = intent.extras
         val treinerName = dados?.getString("name")
+        intent.putExtra("name", "${treinerName}")
 
 
         binding.textName.setTextColor(Color.parseColor("#DF0101"))
@@ -103,8 +104,7 @@ class SelectPokemon : AppCompatActivity() {
             dialog.show()
 
 
-            //startActivity(intent)
-            //finish()
+
         }
 
 

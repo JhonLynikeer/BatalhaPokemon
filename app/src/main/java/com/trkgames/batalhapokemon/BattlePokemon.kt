@@ -13,6 +13,7 @@ private lateinit var binding: ActivityBattlePokemonBinding
 var hpmewtwo = 1000
 var danomewtwo = 50
 var escudo = 0
+var vivo = 1
 var handler = Handler()
 
 
@@ -41,9 +42,12 @@ class BattlePokemon : AppCompatActivity() {
         val image = dados?.get("image").toString().toInt()
         val name = dados?.getString("nome")
         val hp = dados?.getString("hp").toString().toInt()
+
         var meuhp = hp
         hpmewtwo = 1000
         danomewtwo = 50
+        vivo = meuhp
+
 
         binding.nomePokemon.text = "$name"
         binding.hpPlayer.text = "$meuhp"
@@ -54,11 +58,15 @@ class BattlePokemon : AppCompatActivity() {
 
             binding.buttonAtk.setOnClickListener {
                 ataque()
-                vivos()
+                vidamewtwo()
                 handler.postDelayed(Runnable {
                     meuhp -= danomewtwo
                     binding.hpPlayer.text = "$meuhp"
-                    atkmewtwo() }, 1000)
+                    atkmewtwo()
+                    vivo = meuhp
+                    vidapokemon()}, 1000)
+
+
 
 
             }
@@ -74,19 +82,22 @@ class BattlePokemon : AppCompatActivity() {
 
             binding.buttonHeal.setOnClickListener {
                 heal()
+
                 meuhp += 30
                 binding.hpPlayer.text = "$meuhp"
                 handler.postDelayed(Runnable {
                     meuhp -= danomewtwo
                     binding.hpPlayer.text = "$meuhp"
-                    atkmewtwo() }, 1000)
+                    atkmewtwo()
+                    vivo = meuhp
+                    vidapokemon()}, 1000)
 
 
             }
 
             binding.buttonRun.setOnClickListener {
                 fugir()
-                val intent = Intent(this, SelectPokemon::class.java)
+                val intent = Intent(this, Loser::class.java)
                 startActivity(intent)
                 finish()
 
@@ -103,14 +114,15 @@ class BattlePokemon : AppCompatActivity() {
     fun ataque(){
 
         val dados: Bundle? = intent.extras
-        val hp2 = dados?.getString("dano").toString().toInt()
+        val dano = dados?.getString("dano").toString().toInt()
 
         var hp = binding.hpBoss
         hp.text = hpmewtwo.toString()
-        hpmewtwo -= hp2
+        hpmewtwo -= dano
         binding.efeitoAtk.setImageResource(R.drawable.image_atk)
         handler.postDelayed(Runnable { removerefeito() }, 500)
 
+        vidapokemon()
 
     }
 
@@ -145,9 +157,18 @@ class BattlePokemon : AppCompatActivity() {
 
     }
 
-    fun vivos(){
-        if (hpmewtwo < 0 ){
+    fun vidamewtwo(){
+        if (hpmewtwo <= 0 ){
            val intent = Intent(this, Winner::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+    }
+
+    fun vidapokemon(){
+        if (vivo <= 0 ){
+            val intent = Intent(this, Loser::class.java)
             startActivity(intent)
             finish()
         }
@@ -168,7 +189,7 @@ class BattlePokemon : AppCompatActivity() {
             handler.postDelayed(Runnable { removerefeito() }, 500)
 
         }
-
+        vidapokemon()
 
     }
 

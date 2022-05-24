@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonStart.setOnClickListener {
 
-            val intent = Intent(this, NameTreiner::class.java)
+            val intent = Intent(this,
+                NameTreiner::class.java)
             startActivity(intent)
         }
 

@@ -112,12 +112,13 @@
         android:id="@+id/ataque_pokemon_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="8 - 13"
+        android:layout_marginTop="12dp"
+        android:text="10"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/defesa_pokemon_status"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/defesa_pokemon_status"
         app:layout_constraintTop_toBottomOf="@+id/image_pokemo_select" />
 

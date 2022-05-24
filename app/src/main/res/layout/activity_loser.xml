@@ -10,42 +10,57 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="40dp"
         android:text="Que Pena \n Voce \nPerdeu"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="48sp"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="39dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView21"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView21"
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/image_bulbasaur"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="256dp" />
+        android:layout_height="0dp"
+        android:layout_marginBottom="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_again"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:srcCompat="@drawable/loser_face" />
 
     <ImageView
-        android:id="@+id/imageView22"
+        android:id="@+id/button_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/button_treagain"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="458dp" />
+        android:layout_marginBottom="11dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/button_outro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21"
+        app:srcCompat="@drawable/button_treagain" />
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/button_home_loser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/button_home"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="582dp" />
+        android:layout_marginBottom="99dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button_outro"
+        app:layout_constraintTop_toBottomOf="@+id/button_outro"
+        app:srcCompat="@drawable/button_home" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/button_outro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/button_selectother"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="519dp" />
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_home_loser"
+        app:layout_constraintStart_toStartOf="@+id/button_again"
+        app:layout_constraintTop_toBottomOf="@+id/button_again"
+        app:srcCompat="@drawable/button_selectother" />
 </androidx.constraintlayout.widget.ConstraintLayout>

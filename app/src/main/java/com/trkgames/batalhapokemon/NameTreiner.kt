@@ -20,6 +20,8 @@ class NameTreiner : AppCompatActivity() {
             val view = binding.root
                 setContentView(view)
 
+
+
         binding.buttonContinue.setOnClickListener {
 
             nametrainer = binding.nameInput
@@ -29,7 +31,7 @@ class NameTreiner : AppCompatActivity() {
                     val intent = Intent(this, SelectPokemon::class.java)
                     intent.putExtra("name", "${nametrainer.text}")
                     startActivity(intent)
-                    finish()
+
 
                 }
         }
@@ -41,6 +43,7 @@ class NameTreiner : AppCompatActivity() {
         }
 
     }
+
 
     fun verificar():Boolean {
         val erroErik = Toast.makeText(this,
@@ -57,7 +60,9 @@ class NameTreiner : AppCompatActivity() {
 
 
     override fun onBackPressed() {
-
+        val erroErik = Toast.makeText(this,
+            "Sistema anti-erik ATIVADO, so da pra voltar pela navegaçao de botoes", Toast.LENGTH_SHORT)
+        erroErik.show()
     }
 
 }
