@@ -81,6 +81,7 @@
         android:id="@+id/button_atk"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:stateListAnimator="@android:anim/fade_in"
         app:layout_constraintBottom_toBottomOf="@+id/button_heal"
         app:layout_constraintEnd_toStartOf="@+id/button_heal"
         app:layout_constraintStart_toStartOf="@+id/button_def"
@@ -126,10 +127,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="120dp"
         android:text="HP:"
         android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/hp_boss"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image_player"
         app:layout_constraintTop_toBottomOf="@+id/image_boss" />
 
@@ -149,13 +150,13 @@
         android:id="@+id/hp_boss"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="85dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="11dp"
         android:text="1000"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView17"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView17" />
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/image_boss" />
 
     <TextView
         android:id="@+id/textView3"

@@ -7,9 +7,10 @@ import android.widget.Toast
 import com.trkgames.batalhapokemon.databinding.ActivityLoserBinding
 import com.trkgames.batalhapokemon.databinding.ActivityWinnerBinding
 
-private lateinit var binding: ActivityLoserBinding
-
 class Loser : AppCompatActivity() {
+
+    private lateinit var binding: ActivityLoserBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoserBinding.inflate(layoutInflater)

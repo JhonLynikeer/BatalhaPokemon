@@ -1,5 +1,6 @@
 package com.trkgames.batalhapokemon
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,7 @@ import kotlin.properties.Delegates
 class SelectPokemon : AppCompatActivity() {
 
     private lateinit var binding: ActivitySelectPokemonBinding
-    lateinit var img: ImageView
+
     val imgs = intArrayOf(
         R.drawable.image_caterpie,
         R.drawable.image_bulbasaur,
@@ -30,29 +31,26 @@ class SelectPokemon : AppCompatActivity() {
         "Charmeleon",
         "Pidgeotto",
     )
-
-    val dano = arrayListOf<String>(
-        "20",
-        "30",
-        "50",
-        "40",
+    val dano = arrayListOf<Int>(
+        20,
+        30,
+        50,
+        40,
         )
-
-    val defesa = arrayListOf<String>(
-        "30",
-        "35",
-        "40",
-        "50",
+    val defesa = arrayListOf<Int>(
+        5,
+        10,
+        15,
+        20,
     )
-
-    val hp = arrayListOf<String>(
-        "500",
-        "320",
-        "300",
-        "350",
+    val hp = arrayListOf<Int>(
+        500,
+        320,
+        300,
+        350,
     )
-
     var x = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -60,18 +58,12 @@ class SelectPokemon : AppCompatActivity() {
             val view = binding.root
                 setContentView(view)
 
-        val dados: Bundle? = intent.extras
-        val treinerName = dados?.getString("name")
-        intent.putExtra("name", "${treinerName}")
-
+        loaddata()
 
         binding.textName.setTextColor(Color.parseColor("#DF0101"))
-        binding.textName.text = "$treinerName, você deve escolher seu pokémon para batalha:"
-
 
         binding.buttonSetaNext.setOnClickListener {
             proximo(it)
-
         }
 
         binding.buttonSetaBack.setOnClickListener {
@@ -79,34 +71,28 @@ class SelectPokemon : AppCompatActivity() {
         }
 
         binding.buttonYes.setOnClickListener {
-            //val intent = Intent(this, BattlePokemon::class.java)
-            //intent.putExtra("pokemon", "${x}")
-
 
             val dialog = AlertDialog.Builder(this).
-            setTitle("Tem certeza?").
-            setMessage("O chefao pode acabar com você muito rapido!")
+            setTitle("Gostaria de um Tutorial?").
+            setMessage("Se voce nunca jogou, seria bom aprender um pouco.")
                 .setPositiveButton("Sim") { dialog, _ ->
-                    val intent = Intent(this, BattlePokemon::class.java)
-                    intent.putExtra("image", "${x}")
-                    intent.putExtra("nome", "${nome[x]}")
-                    intent.putExtra("hp", "${hp[x]}")
-                    intent.putExtra("dano", "${dano[x]}")
-
+                    val intent = Intent(this, Tutorial::class.java)
+                    saveStatus()
                     startActivity(intent)
                     finish()
 
                     dialog.dismiss()
                 }
                 .setNegativeButton("Não") { dialog, _ ->
+                    val intent = Intent(this, BattlePokemon::class.java)
+                    saveStatus()
+                    startActivity(intent)
+                    finish()
                     dialog.dismiss()
                 }
             dialog.show()
 
-
-
         }
-
 
         binding.buttonBackSelect.setOnClickListener {
             val intent = Intent(this, NameTreiner::class.java)
@@ -114,10 +100,27 @@ class SelectPokemon : AppCompatActivity() {
             finish()
         }
 
+    }
 
+    fun saveStatus(){
 
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply {
+            putString("NOME_KEY", nome[x])
+            putInt("DANO_KEY", dano[x])
+            putInt("HP_KEY", hp[x])
+            putInt("DEFESA_KEY", defesa[x])
+            putInt("IMAGE_KEY", x)
 
+        }.apply()
 
+    }
+
+    fun loaddata(){
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val savedString = sharedPreferences.getString("String_key", null)
+        binding.textName.text = savedString + ", você deve escolher seu pokémon para batalha:"
 
     }
 
@@ -125,9 +128,9 @@ class SelectPokemon : AppCompatActivity() {
         if (x > 0){
             x -= 1
             binding.imagePokemoSelect.setImageResource(imgs[x])
-            binding.ataquePokemonStatus.setText(dano[x])
-            binding.defesaPokemonStatus.setText(defesa[x])
-            binding.hpPokemonStatus.setText(hp[x])
+            binding.ataquePokemonStatus.setText(dano[x].toString())
+            binding.defesaPokemonStatus.setText(defesa[x].toString())
+            binding.hpPokemonStatus.setText(hp[x].toString())
             binding.namePokemonStatus.setText(nome[x])
         }
     }
@@ -136,13 +139,12 @@ class SelectPokemon : AppCompatActivity() {
         if (x < imgs.size-1){
             x += 1
             binding.imagePokemoSelect.setImageResource(imgs[x])
-            binding.ataquePokemonStatus.setText(dano[x])
-            binding.defesaPokemonStatus.setText(defesa[x])
-            binding.hpPokemonStatus.setText(hp[x])
+            binding.ataquePokemonStatus.setText(dano[x].toString())
+            binding.defesaPokemonStatus.setText(defesa[x].toString())
+            binding.hpPokemonStatus.setText(hp[x].toString())
             binding.namePokemonStatus.setText(nome[x])
         }
     }
-
 
     override fun onBackPressed() {
         val erroErik = Toast.makeText(this,

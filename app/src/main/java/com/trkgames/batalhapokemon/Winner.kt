@@ -7,9 +7,10 @@ import android.widget.Toast
 import com.trkgames.batalhapokemon.databinding.ActivityBattlePokemonBinding
 import com.trkgames.batalhapokemon.databinding.ActivityWinnerBinding
 
-private lateinit var binding: ActivityWinnerBinding
-
 class Winner : AppCompatActivity() {
+
+    private lateinit var binding: ActivityWinnerBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
